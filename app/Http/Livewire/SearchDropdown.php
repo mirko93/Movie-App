@@ -8,8 +8,6 @@ use Livewire\Component;
 class SearchDropdown extends Component
 {
     public $search = '';
-    // problem kad je prazan string u input search nece da izbaci rezultat
-    // iako je definisan u search-dropdown.blade.php
 
     public function render()
     {
