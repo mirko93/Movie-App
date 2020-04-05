@@ -1,5 +1,5 @@
-<div class="relative mt-3 md:mt-0">
-    <input wire:model.debounce.500ms="search" type="text" class="bg-gray-800 text-sm rounded-full w-64 px-4 py-2 pl-8 focus:outline-none focus:shadow-outline" placeholder="Search..." >
+<div class="relative mt-3 md:mt-0" x-data="{ isOpen: true }" @click.away="isOpen = false">
+    <input wire:model.debounce.500ms="search" type="text" class="bg-gray-800 text-sm rounded-full w-64 px-4 py-2 pl-8 focus:outline-none focus:shadow-outline" placeholder="Search..." @focus="isOpen = true" @keydown.escape.window="isOpen = false">
     <div class="absolute top-0">
         <svg class="fill-current text-gray-500 w-4 mt-3 ml-2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-1 0 136 136.21852">
             <g id="surface1">
@@ -11,7 +11,7 @@
     <div wire:loading class="spinner top-0 right-0 mr-4 mt-5"></div>
 
     @if (strlen($search) >= 2)
-        <div class="z-50 absolute bg-gray-800 text-sm rounded w-64 mt-4">
+        <div class="z-50 absolute bg-gray-800 text-sm rounded w-64 mt-4" x-show="isOpen">
             @if ($searchMovie->count() > 0)
                 <ul>
                     @foreach ($searchMovie as $result)

@@ -6,8 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie App</title>
 
+    {{-- STYLE CSS --}}
     <link rel="stylesheet" href="/css/main.css">
+    {{-- LIVEWIRE - laravel --}}
     <livewire:styles>
+    {{-- Alpine.js --}}
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 </head>
 <body class="font-sans bg-gray-900 text-white">
