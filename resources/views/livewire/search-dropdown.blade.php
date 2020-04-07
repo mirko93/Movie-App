@@ -1,5 +1,5 @@
 <div class="relative mt-3 md:mt-0" x-data="{ isOpen: true }" @click.away="isOpen = false">
-    <input wire:model.debounce.500ms="search" type="text" class="bg-gray-800 text-sm rounded-full w-64 px-4 py-2 pl-8 focus:outline-none focus:shadow-outline" placeholder="Search..." x-ref="search" @keydown.window="if (event.keyCode === 191) { event.preventDefault(); $refs.search.focus(); } " @focus="isOpen = true" @keydown="isOpen = true" @keydown.escape.window="isOpen = false" @keydown.shift.tab="isOpen = false">
+    <input wire:model.debounce.500ms="search" type="text" class="bg-gray-800 text-sm rounded-full w-64 px-4 py-2 pl-8 focus:outline-none focus:shadow-outline" placeholder='Search (Press "/" to focus)' x-ref="search" @keydown.window="if (event.keyCode === 191) { event.preventDefault(); $refs.search.focus(); } " @focus="isOpen = true" @keydown="isOpen = true" @keydown.escape.window="isOpen = false" @keydown.shift.tab="isOpen = false">
     <div class="absolute top-0">
         <svg class="fill-current text-gray-500 w-4 mt-3 ml-2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-1 0 136 136.21852">
             <g id="surface1">
